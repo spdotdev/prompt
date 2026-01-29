@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="icon" type="image/svg+xml" href="/src/assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friday AI</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Left Sidebar -->
+        <aside id="sidebar" class="collapsed">
+            <div class="sidebar-header">
+                <button id="toggle-sidebar" class="icon-btn"><span class="material-icons-outlined">menu</span></button>
+            </div>
+            <div class="sidebar-content">
+                <div class="sidebar-item"><span class="material-icons-outlined">chat_bubble_outline</span> <span>Project
+                        Planner</span></div>
+                <div class="sidebar-item"><span class="material-icons-outlined">code</span> <span>Code Refactor</span>
+                </div>
+                <div class="sidebar-item"><span class="material-icons-outlined">image</span> <span>Logo Design</span>
+                </div>
+                <div class="sidebar-item"><span class="material-icons-outlined">lightbulb</span>
+                    <span>Brainstorming</span>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <div class="sidebar-item"><span class="material-icons-outlined">account_circle</span> <span>User</span>
+                </div>
+                <div class="sidebar-item"><span class="material-icons-outlined">settings</span> <span>Settings</span>
+                </div>
+                <div class="sidebar-item"><span class="material-icons-outlined">logout</span> <span>Log out</span></div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-container">
+            <!-- Top Bar -->
+            <header id="top-bar">
+                <div class="top-left">
+                    <!-- Version Dropdown -->
+                    <div class="custom-dropdown" id="version-dropdown">
+                        <div class="dropdown-trigger">
+                            <span class="selected-value">v1.0.0</span>
+                            <span class="material-icons-outlined" style="font-size: 16px;">expand_more</span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item selected" data-value="v1.0.0">v1.0.0</div>
+                            <div class="dropdown-item" data-value="v1.5.1">v1.5.1</div>
+                            <div class="dropdown-item" data-value="v2.0.0">v2.0.0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-center">
+                    <!-- FILL Dropdown -->
+                    <div class="custom-dropdown" id="fill-dropdown-custom">
+                        <div class="dropdown-trigger">
+                            <span class="selected-value">FILL</span>
+                            <span class="material-icons-outlined" style="font-size: 16px;">expand_more</span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item" data-value="rich">
+                                <span class="material-icons-outlined">auto_awesome</span>
+                                <span>Fill Rich Content</span>
+                            </div>
+                            <div class="dropdown-item" data-value="code">
+                                <span class="material-icons-outlined">code</span>
+                                <span>Fill Code Examples</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-right">
+                    <button class="icon-btn" title="Magic"><span
+                            class="material-icons-outlined">auto_fix_high</span></button>
+                    <button class="icon-btn" title="Share"><span class="material-icons-outlined">share</span></button>
+                    <button class="icon-btn" title="Add Person"><span
+                            class="material-icons-outlined">person_add</span></button>
+                    <button id="files-btn" class="icon-btn" title="Files"><span
+                            class="material-icons-outlined">folder</span></button>
+                </div>
+            </header>
+
+            <!-- Chat Content Area -->
+            <div id="chat-content" class="empty">
+                <div id="scroll-controls">
+                    <button id="scroll-up" class="scroll-btn hidden"><span
+                            class="material-icons-outlined">arrow_upward</span></button>
+                    <button id="scroll-down" class="scroll-btn hidden"><span
+                            class="material-icons-outlined">arrow_downward</span></button>
+                </div>
+                <div id="messages-container">
+                    <!-- Messages will appear here -->
+                </div>
+                <div id="suggested-followups" class="hidden">
+                    <!-- Suggestions -->
+                </div>
+            </div>
+
+            <!-- Prompt Area -->
+            <div id="prompt-container" class="centered">
+                <div class="prompt-box">
+                    <textarea id="user-prompt"
+                        placeholder="Ask anything (Ctrl+L), @ to mention, / for workflows"></textarea>
+
+                    <div class="prompt-bottom-row">
+                        <div class="prompt-inputs">
+                            <button class="icon-btn small"><span class="material-icons-outlined">add</span></button>
+                            <div class="mode-selectors">
+                                <!-- Conversational Mode Dropdown -->
+                                <div class="custom-dropdown" id="mode-dropdown">
+                                    <div class="dropdown-trigger">
+                                        <span class="selected-value">Fast</span>
+                                        <span class="material-icons-outlined"
+                                            style="font-size: 16px;">expand_more</span>
+                                    </div>
+                                    <div class="dropdown-menu">
+                                        <div class="dropdown-item selected" data-value="fast">Fast</div>
+                                        <div class="dropdown-item" data-value="planning">Planning</div>
+                                    </div>
+                                </div>
+
+                                <!-- Model Select Dropdown -->
+                                <div class="custom-dropdown" id="model-dropdown-custom">
+                                    <div class="dropdown-trigger">
+                                        <span class="selected-value">Friday v1</span>
+                                        <span class="material-icons-outlined"
+                                            style="font-size: 16px;">expand_more</span>
+                                    </div>
+                                    <div class="dropdown-menu">
+                                        <div class="dropdown-item selected" data-value="friday-v1">Friday v1</div>
+                                        <div class="dropdown-item" data-value="friday-turbo">Friday Turbo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prompt-actions">
+                            <button id="mic-btn" class="icon-btn"><span
+                                    class="material-icons-outlined">mic</span></button>
+                            <button id="send-btn" class="send-btn"><span
+                                    class="material-icons-outlined">arrow_upward</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Footer (Fixed) -->
+            <div id="page-footer">
+                <span class="disclaimer">AI may make mistakes. Double-check all generated content</span>
+                <span class="copyright">© 2026 Scuttle Development. All rights reserved.</span>
+            </div>
+
+        </main>
+
+        <!-- Modal -->
+        <div id="files-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Files</h3>
+                    <div class="modal-header-actions">
+                        <button id="download-all-btn" class="icon-btn" title="Download All"><span
+                                class="material-icons-outlined">download</span></button>
+                        <button id="close-modal" class="icon-btn" title="Close"><span
+                                class="material-icons-outlined">close</span></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <!-- File list -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

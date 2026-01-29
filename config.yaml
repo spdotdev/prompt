@@ -1,0 +1,13 @@
+app:
+  name: Friday
+  version: 1.0.0
+  links:
+    - name: Icons Pack
+      url: https://fonts.google.com/icons
+theme:
+  colors:
+    primary: "#00aeff"
+    background_dark: "#121212"
+    background_light: "#ffffff"
+    text_dark: "#e0e0e0"
+    text_light: "#121212"

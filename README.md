@@ -1,5 +1,7 @@
 # PROMPT
 
+- <https://spdotdev.github.io/prompt/>
+
 ## LIBRARIES
 
 - [Vite](https://vite.dev/)

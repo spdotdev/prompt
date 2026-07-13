@@ -174,7 +174,7 @@ function sendMessage() {
     setTimeout(() => {
         addMessage({
             type: 'ai',
-            content: 'I am Friday. Use the FILL button to see my full capabilities.',
+            content: 'I am PROMPT. Use the FILL button to see my full capabilities.',
             timestamp: new Date().toISOString()
         });
     }, 500);

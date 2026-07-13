@@ -199,7 +199,7 @@ export const mockContent = [
             </summary>
             <div class="code-content">
 <pre><code class="language-python">def hello_world():
-    print("Hello, Friday!")
+    print("Hello, PROMPT!")
     return True</code></pre>
             </div>
         </details>
@@ -214,11 +214,11 @@ export const mockContent = [
                 </span>
             </summary>
             <div class="code-content">
-<pre><code class="language-javascript">const friday = {
+<pre><code class="language-javascript">const prompt = {
   version: "2.0.0",
   active: true
 };
-console.log(friday);</code></pre>
+console.log(prompt);</code></pre>
             </div>
         </details>
       </div>

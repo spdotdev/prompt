@@ -17,6 +17,7 @@ npm install
 npm run dev       # local dev server
 npm run build     # production build to dist/
 npm run preview   # preview the production build
+npm run lint      # ESLint
 ```
 
 ## Structure
@@ -33,3 +34,9 @@ index.html
 ## Deployment
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds with Vite and publishes `dist/` to GitHub Pages (Pages source: GitHub Actions). `vite.config.js` sets `base: '/prompt/'` to match the Pages subpath — update it if the repo is ever renamed or moved to a custom domain.
+
+## CI
+
+- **CI** (`ci.yml`) — build check on PRs and pushes to non-main branches.
+- **Code Quality** (`code-quality.yml`) — ESLint on PRs and `main`.
+- **Security** (`security.yml`) — CodeQL static analysis + `npm audit` on PRs, `main`, and a weekly schedule.

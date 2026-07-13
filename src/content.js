@@ -1,5 +1,3 @@
-import yaml from 'js-yaml';
-
 export const mockCodeContent = [
   {
     type: 'user',

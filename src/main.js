@@ -31,7 +31,6 @@ function initCustomDropdowns() {
 
     dropdowns.forEach(dropdown => {
         const trigger = dropdown.querySelector('.dropdown-trigger');
-        const menu = dropdown.querySelector('.dropdown-menu');
         const items = dropdown.querySelectorAll('.dropdown-item');
         const label = trigger.querySelector('.selected-value');
 

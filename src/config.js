@@ -2,7 +2,7 @@ import yaml from 'js-yaml';
 
 export async function loadConfig() {
     try {
-        const response = await fetch('/config.yaml');
+        const response = await fetch(`${import.meta.env.BASE_URL}config.yaml`);
         const text = await response.text();
         const config = yaml.load(text);
         return config;

@@ -28,6 +28,7 @@ src/main.js           # app wiring: dropdowns, chat input, mock "FILL" content, 
 src/config.js         # loads config.yaml and applies theme colors as CSS vars
 src/content.js        # mock chat messages/code blocks used by the FILL dropdown
 src/style.css
+src/assets/logo.png   # favicon
 index.html
 ```
 

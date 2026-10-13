@@ -12,3 +12,6 @@ Static, no-backend mockup of an AI chat UI. Vanilla JS + Vite, no framework, no 
 ## Deploy
 
 `.github/workflows/deploy.yml` builds and deploys `dist/` to GitHub Pages on every push to `main`. Pages source is set to "GitHub Actions" (not the legacy branch/root mode) — don't change that in repo settings or pushes will silently stop deploying via the workflow.
+
+## Deploy (set 2026-10-13, HARD RULE, user decision)
+Production on d051 always runs the latest `main` of this project. When the user asks for a change and it is merged to main, deploy it yourself right away, without asking: push or merge, watch CI and the deploy to the end, and check the server runs that commit. If this project uses tags, deploy the latest tag every time. Anything not in main is local testing and is never deployed. A failing deploy is reported first as broken, with what it blocks. Never open PRs unless asked.

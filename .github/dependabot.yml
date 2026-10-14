@@ -1,0 +1,21 @@
+# Dependabot keeps package-lock.json moving forward. Without it the Security
+# workflow (npm audit, blocking) goes red every time a new advisory lands in a
+# transitive package, and nothing moves the lockfile by itself.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      npm-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

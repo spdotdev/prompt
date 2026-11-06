@@ -12,12 +12,12 @@
   },
   "devDependencies": {
     "eslint": "^9.39.5",
-    "globals": "^17.7.0",
+    "globals": "^17.14.0",
     "vite": "^6.4.5",
     "vitest": "^5.1.0"
   },
   "dependencies": {
-    "highlight.js": "^11.11.1",
+    "highlight.js": "^11.12.0",
     "js-yaml": "^4.1.0"
   }
 }
